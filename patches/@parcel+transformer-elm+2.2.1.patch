@@ -1,0 +1,15 @@
+diff --git a/node_modules/@parcel/transformer-elm/lib/ElmTransformer.js b/node_modules/@parcel/transformer-elm/lib/ElmTransformer.js
+index 63fdf5d..79b7bb7 100644
+--- a/node_modules/@parcel/transformer-elm/lib/ElmTransformer.js
++++ b/node_modules/@parcel/transformer-elm/lib/ElmTransformer.js
+@@ -138,8 +138,8 @@ var _default = new (_plugin().Transformer)({
+       spawn: _crossSpawn().default,
+       cwd: _path().default.dirname(asset.filePath),
+       // $FlowFixMe[sketchy-null-string]
+-      debug: !options.env.PARCEL_ELM_NO_DEBUG && options.mode !== 'production',
+-      optimize: asset.env.shouldOptimize
++      debug: options.env.PARCEL_ELM_NO_DEBUG && options.mode !== 'production',
++      optimize: options.mode === 'production'
+     };
+     asset.invalidateOnEnvChange('PARCEL_ELM_NO_DEBUG');
+ 
