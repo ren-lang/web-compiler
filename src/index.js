@@ -2,7 +2,7 @@ import { Elm } from './Main.elm'
 
 const compiler = Elm.Main.init()
 
-compiler.toJavascript.subscribe(src => {
+compiler.ports.toJavascript.subscribe(src => {
     const esm = 'data:text/javascript;base64,' + btoa(src)
 
     import(esm)
@@ -24,6 +24,6 @@ window.addEventListener('load', () => {
     document
         .querySelectorAll('script[type="application/ren"]')
         .forEach(({ innerHTML }) => {
-            compiler.fromJavascript.send(innerHTML)
+            compiler.ports.fromJavascript.send(innerHTML)
         })
 })

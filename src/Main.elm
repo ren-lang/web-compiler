@@ -18,7 +18,6 @@ main =
                     run untyped input
                         |> Result.toMaybe
                         |> Maybe.map toJavascript
-                        |> Debug.log ""
                         |> Maybe.withDefault Cmd.none
                 )
         , subscriptions = always <| fromJavascript Basics.identity
