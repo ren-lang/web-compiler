@@ -1,6 +1,6 @@
 {
   "name": "ren-web-compiler",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Automatically compile and execute script tags with Ren code inside.",
   "source": "src/index.js",
   "module": "dist/compiler.js",
